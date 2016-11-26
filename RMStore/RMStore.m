@@ -617,7 +617,7 @@ typedef void (^RMStoreSuccessBlock)();
 - (void)didDownloadSelfHostedContentForTransaction:(SKPaymentTransaction *)transaction queue:(SKPaymentQueue*)queue
 {
     NSArray *downloads = [transaction respondsToSelector:@selector(downloads)] ? transaction.downloads : @[];
-    if (downloads.count > 0)
+    if (downloads.count > 0 && self.shouldDownloadHostedContent)
     {
         RMStoreLog(@"starting downloads for product %@ started", transaction.payment.productIdentifier);
         [queue startDownloads:downloads];

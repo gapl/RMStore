@@ -136,6 +136,12 @@ extern NSInteger const RMStoreErrorCodeUnableToCompleteVerification;
                         failure:(void (^)(NSError *error))failureBlock __attribute__((availability(ios,introduced=7.0)));
 
 ///---------------------------------------------
+/// @name Properties
+///---------------------------------------------
+
+@property (nonatomic) BOOL shouldDownloadHostedContent;
+
+///---------------------------------------------
 /// @name Setting Delegates
 ///---------------------------------------------
 
